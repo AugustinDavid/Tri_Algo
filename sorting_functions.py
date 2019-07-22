@@ -28,33 +28,65 @@ def get_distance_from_grenoble(city):
     return dist_en_km
 
 
-def swap(A, i, j):
+def swap(liste, i, j):
     """Helper function to swap elements i and j of list A."""
+
     print(" # TODO # ")
-    yield A
+    yield liste
 
 
-def insertionsort(get_distance_from_grenoble):
+def insertionsort(A,*args, **kwargs):
     """In-place insertion sort."""
-    for city in len(tableau):
-        temp = tableau[city]
-        j = city
-        while j>0 and temp< tableau[j-1]:
+    for j in range(len(A)):
+        temp = A[j]
+        i = j-1
+        while i >= 0 and A[i] > temp:# i>= ne pas oublié le = sinon ne traite pas la première occurence
+            A[i+1] = A[i]
+            i = i-1
+        A[i+1] = temp
 
-    print(" # TODO # ")
-    yield A
+        yield A
+
+
 
 
 def bubblesort(A, *args, **kwargs):
     """In-place bubble sort."""
-    print(" # TODO # ")
-    yield A
+
+    n = len(A)# on crée une variable qui stocke la longueur du tab a traité
+
+    for i in range(n): # on parcours tout le tableau
+
+        for j in range(0, n-1):# fonction range a 3 paramètres( start, stop, pas dans la liste), là il y a start et stop
+
+    #traitement de l'index en cours et de celui qu'on rencontre
+
+            if A[j] > A[j+1]:# Si l'index en cours est plus grand que celui qu'on recontre
+                temp = A[j]
+                A[j] = A[j+1]
+                A[j + 1] = temp
+                yield A
+
 
 
 def selectionsort(A, *args, **kwargs):
     """In-place selection sort."""
-    print(" # TODO # ")
-    yield A
+    n = len(A)
+
+    for i in range(n):# Première boucle pour parcourir le tableau
+
+        temp_min= i # stockage de  i en temporaire pour la verif
+
+        for j in range(i+1,n):# on commence a boucler a i+1 jusqu'à la fin du tableau
+            if A[temp_min] > A[j]:
+                temp_min = j
+
+        temp = A[i]
+        A[i] = A[temp_min]
+        A[temp_min] = temp
+
+        yield A
+
 
 
 def mergesort(A, start, end):
@@ -69,10 +101,24 @@ def quicksort(A, start, end):
     yield A
 
 
-def shellsort(A, *args, **kwargs):
+def shellsort(A, *args, **kwargs):#tri shellsort : www.geeksforgeeks
     "Shell sort using Shell's (original) gap sequence: n/2, n/4, ..., 1."
-    print(" # TODO # ")
-    yield A
+    n = len(A)
+
+    gap = int(n/2)# faire un gap de la longueur divisé par 2
+
+    # Application du tri par insertion en utilisant le gap pour trouver les chiffres à comparer
+    while gap > 0:
+
+        for j in range(gap, n):# Boucler sur n de  nombre de gap
+            temp = A[j]
+            i = j
+            while i >= gap and A[i-gap] > temp:  # i>= ne pas oublié le = sinon ne traite pas la première occurence
+                A[i] = A[i-gap]
+                i -= gap
+            A[i] = temp
+        gap -= 1
+        yield A
 
 
 def heapsort(A, *args, **kwargs):
@@ -84,8 +130,9 @@ def heapsort(A, *args, **kwargs):
 if __name__ == "__main__":
     test_data = [8, 5, 9, 34, 22, 12, 4, 2]
 
-    # for a in insertionsort(test_data):
-    #     print(a)
+
+    #for a in shellsort(test_data):
+        #print(a)
 
     # for a in shellsort(test_data):
     #     print(a)
