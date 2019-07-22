@@ -1,0 +1,111 @@
+# Byte-compilés / optimisés / fichiers DLL
+__pycache__ /
+* .py [ cod ]
+* $ py.class
+
+Extensions # C
+* .so
+
+# Distribution / emballage
+.Python
+construire /
+oeufs-en développement /
+dist /
+téléchargements /
+oeufs /
+.ggs /
+lib /
+lib64 /
+pièces /
+sdist /
+var /
+roues /
+* .egg-info /
+.installed.cfg
+* .egg
+MANIFESTE
+
+# PyInstaller
+#   Habituellement, ces fichiers sont écrits par un script python à partir d'un modèle
+#   avant que PyInstaller construise le fichier exe, de manière à y injecter la date / d’autres informations.
+*. Manifeste
+* .spec
+
+# Journaux d'installation
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Rapports de test unitaire / de couverture
+htmlcov /
+.tox /
+.couverture
+.couverture. *
+.cache
+nosetests.xml
+couverture.xml
+* .cover
+.hypothèse /
+.pytest_cache /
+
+# Traductions
+* .mo
+* .pot
+
+# Trucs Django:
+* .log
+local_settings.py
+db.sqlite3
+
+# Choses Flask:
+instance /
+.webassets-cache
+
+# Scrapy stuff:
+.raprapy
+
+# Documentation Sphinx
+docs / _build /
+
+# PyBuilder
+cible /
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# Céleri fichier calendrier de battement
+calendrier de céleri
+
+# Fichiers analysés par SageMath
+* .sage.py
+
+# Environnements
+.env
+.venv
+env /
+venv /
+ENV /
+env.bak /
+venv.bak /
+
+# Paramètres du projet Spyder
+.spyderproject
+.spyproject
+
+# Paramètres du projet de corde
+.projetrope
+
+# documentation mkdocs
+/ site
+
+# mypy
+.mypy_cache /
+solution /
+
+
+
+#pycharm
+
+.idea/
